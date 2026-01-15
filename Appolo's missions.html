@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Missions Apollo</title>
+<style>
+    body {
+        color: orangered;
+        background-color:orange;
+        background-position: center;
+        text-align: center;
+    }
+    /* Style de base pour le conteneur */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 40px 0;
+}
+
+/* La ligne centrale */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #000000;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Conteneur des items */
+.timeline ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.timeline li {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%; /* Prend la moitié de la largeur */
+  box-sizing: border-box;
+}
+
+/* Alternance gauche / droite */
+.timeline li:nth-child(odd) { left: 0; text-align: right; }
+.timeline li:nth-child(even) { left: 50%; text-align: left; }
+
+/* Les points sur la ligne */
+.timeline li::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -10px;
+  background-color: rgb(0, 0, 0);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline li:nth-child(even)::after {
+  left: -10px;
+}
+
+/* Style du contenu (image + texte) */
+.content img {
+  width: 60%;
+  align-items: center;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.content {
+  padding: 20px;
+  background-color: orangered;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  color: black;
+}
+/* Définition de l'animation */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.timeline li {
+  /* On crée une timeline de vue pour chaque élément */
+  view-timeline-name: --itemVisible;
+  view-timeline-axis: block;
+
+  /* On lie l'animation à cette timeline */
+  animation: reveal linear both;
+  animation-timeline: --itemVisible;
+
+  /* L'animation joue quand l'élément entre et sort de la vue */
+  animation-range: entry 10% cover 30%;
+}
+.button-link {
+  background-color: orange;
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.button-link:hover {
+  background-color: #ff0000;
+}
+.button-link2 {
+  background-color: orangered;
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.button-link2:hover {
+  background-color: red;
+}
+ol {
+  list-style-type: upper-roman; /* Chiffres romains (I, II, III) */
+}
+
+</style>
+</head>
+
+<body>
+  <a href="mailto:h.reillon72@gmail.com"
+  class="button-link2"
+  style="display: table;">Contactez moi</a>
+<h1 style="text-decoration: underline;">Les Missions Apollo</h1>
+<h2 style="text-decoration: underline;">Sommaire</h2>
+<ol style="display: inline-block; text-decoration: underline;">
+  <li>Les missions Apollo</li>
+  <br>
+  <li>Apollo 1</li>
+  <br>
+  <li>Apollo 4-5-6</li>
+  <br>
+  <li>Apollo 7-8-9-10</li>
+  <br>
+  <li>Apollo 11</li>
+  <br>
+  <li>Apollo 12-13-14-15-16-17</li>
+</ol>
+<div class="timeline">
+    <ul>
+        <li>
+            <div class="content">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Apollo_program.svg/langfr-250px-Apollo_program.svg.png" alt="Description">  
+            <h3>Le programme Apollo</h3>
+            <p>Lancement en 1961 par John F. Kennedy</p>
+            <a href="Les Missions Appolo.html" class="button-link" style="color: black;">Voir Plus</a>  
+            </div>
+        </li>
+        <li>
+            <div class="content">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Apollo_1_patch.png/250px-Apollo_1_patch.png" alt="Description">
+                <h3>Apollo 1 : Le batème du feu</h3>
+                <p>3 Astronautes meurent... Au Sol</p>
+                <a href="Appolo 1.html"
+                style="color: black;"
+                class="button-link"
+                >Voir Plus</a>
+            </div>
+        </li>
+        <li>
+            <div class="content">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/S68-27366.jpg/250px-S68-27366.jpg" alt="Description">
+                <h3>Apollo 4-5-6 : Les Test</h3>
+                <p>Fiabilisation des modules de lancement</p>
+                <a href="Apollo 4-5-6.html"
+                class="button-link"
+                style="color: black;"
+                >Voir Plus</a>
+            </div>
+        </li>
+        <li>
+          <div class="content">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/NASA-Apollo8-Dec24-Earthrise.jpg/250px-NASA-Apollo8-Dec24-Earthrise.jpg" alt="Description">
+                <h3>Apollo 7-8-9-10 : Les Vols Habités</h3>
+                <p>Dernières répétitions avant la Lune</p>
+                <a href="Apollo 7-8-9-10.html"
+                class="button-link"
+                style="color: black;"
+                >Voir Plus</a>
+            </div>
+        </li>
+        <li>
+          <div class="content">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Apollo_11_Crew.jpg/250px-Apollo_11_Crew.jpg" alt="Description">
+                <h3>Apollo 11 : "Un petit pas pour l'homme mais un pas de géant pout l'Humanité"</h3>
+                <p>La Lune</p>
+                <a href="Apollo 11.html"
+                class="button-link"
+                style="color: black;"
+                >Voir Plus</a>
+            </div>
+        </li>
+        <li>
+          <div class="content">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/John_W._Young_on_the_Moon.jpg/250px-John_W._Young_on_the_Moon.jpg" alt="Description">
+                <h3>Apollo 12-13-14-15-16-17 : On continue</h3>
+                <p>Les dernières missions sur la Lune</p>
+                <a href="Apollo 12-13-14-15-16-17.html"
+                class="button-link"
+                style="color: black;"
+                >Voir Plus</a>
+            </div>
+        </li>
+    </ul>
+</div>
+<h2>Si vous voulez apprendre comment l'ISS a été construite</h2>
+    <a href="https://www.youtube.com/watch?v=FhKOuxhGlmI"
+    class="button-link2"
+    >Cliquez ici</a>
+</body>
+
+</html>
